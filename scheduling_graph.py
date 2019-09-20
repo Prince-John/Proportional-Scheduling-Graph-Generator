@@ -50,13 +50,16 @@ for i in range(0, end_time, time_step):
 t = np.arange(0 , end_time+1, time_step)
 for i in range(0, thread_count):
     thread[i].plot(t, virtual_time[i])
+   
 
 
 plt.xticks(np.arange(0, end_time+1, time_step))
-plt.xlabel='time'
+thread[0].set_xlabel('time')
+thread[0].set_ylabel('virtual time')
+thread[0].set_title('Proportional Scheduling')
+plt.legend()
 plt.grid()
-plt.ylabel='virtual time'
-plt.title='Proportional Scheduling'
+
 plt.show()
                 
 
